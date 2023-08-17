@@ -1,0 +1,46 @@
+---
+title: "NestedForLoops"
+author: "OP"
+format: html
+editor: visual
+---
+
+```{r}
+
+# step 1 - for the first iteration of the outermost loop of the first vector iterate through all iterations of the innermost loop of the 2nd vector
+
+#step 2 - complete the step 1 for all iterations of the outermost loop with the corresponding iterations of the innermost loop
+
+file_prefix <- c("temp", "ph", "salinity")
+file_suffix <- c(1, 2, 3, 4, 5)
+
+for (i in seq_along(file_prefix)){
+  for (j in seq_along(file_suffix)){
+    print(paste0(file_prefix[i], "_", file_suffix[j]))
+  }
+}
+
+
+```
+
+```{r}
+odds <- c(1, 3, 5)
+evens <- c(2, 4, 6, 8)
+
+for (i in seq_along(odds)){
+  for (j in seq_along(evens)){
+    print(odds[i] * evens[j])
+  }
+}
+  
+# Expected: 2, 4, 6, 8, 6, 12, 18, 10, 20, 30, 40
+```
+
+```{r}
+
+function_name <- function(bird, dog) {
+  pets = bird + dog
+  returns(pets)
+}
+
+```
