@@ -65,3 +65,8 @@ Use *one other method* (e.g. `apply`, `across`, or `purrr::map_df`) to find
     map_df(mean, na.rm = TRUE)
   
 ```
+
+```{r}
+inlet_biochem %>% 
+  apply(2, mean, na.rm = TRUE)
+```
