@@ -3,12 +3,16 @@ title: "toolik_chem"
 author: "OP"
 format: html
 editor: visual
+execute: 
+  echo: false
+  warning: false
 ---
 
 ```{r}
 library(tidyverse)
 library(here)
 library(janitor)
+library(purrr)
 ```
 
 ```{r}
@@ -47,16 +51,17 @@ for(i in seq_along(inlet_biochem)){
 Use *one other method* (e.g. `apply`, `across`, or `purrr::map_df`) to find the mean for each column.
 
 ```{r}
-
+# use accross function to find mean
  inlet_biochem %>% 
     summarize(across(everything(), mean, na.rm = TRUE))
-  
-
-
 
 ```
 
 ```{r}
 
+# use purrr::map_df function to find mean
 
+ inlet_biochem %>% 
+    map_df(mean, na.rm = TRUE)
+  
 ```
